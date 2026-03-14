@@ -1,0 +1,306 @@
+/* ========================================
+   Xuan Theme - Components
+   组件：代码、表格、引用、链接、标签、任务、媒体
+======================================== */
+
+/* ───────────────────────────────────────
+   Code Blocks
+   ─────────────────────────────────────── */
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: var(--font-monospace);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.cm-inline-code {
+  background-color: var(--code-background);
+  color: var(--code-normal);
+  padding: var(--code-inline-padding);
+  border-radius: var(--radius-l);
+  font-size: var(--code-inline-font-size);
+  line-height: var(--line-height-normal);
+  font-family: var(--font-monospace);
+}
+
+.markdown-rendered code,
+.markdown-source-view.mod-cm6 code {
+  background-color: var(--code-background);
+  color: var(--code-normal);
+  padding: var(--code-inline-padding);
+  border-radius: var(--radius-l);
+  font-size: var(--code-inline-font-size);
+  font-family: var(--font-monospace);
+  line-height: inherit;
+}
+
+.markdown-rendered pre > code,
+.markdown-source-view.mod-cm6 pre > code {
+  padding: var(--code-block-padding);
+  display: block;
+  overflow-x: auto;
+}
+
+/* Syntax Highlighting */
+.token.comment { color: var(--code-comment); }
+.token.function { color: var(--code-function); }
+.token.keyword { color: var(--code-keyword); }
+.token.string { color: var(--code-string); }
+.token.operator { color: var(--code-operator); }
+.token.property { color: var(--code-property); }
+.token.punctuation { color: var(--code-punctuation); }
+.token.tag { color: var(--code-tag); }
+.token.value { color: var(--code-value); }
+
+/* ───────────────────────────────────────
+   Tables
+   ─────────────────────────────────────── */
+.markdown-rendered table,
+.markdown-preview-view table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.markdown-rendered th,
+.markdown-preview-view th {
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--divider-color);
+  padding: var(--table-cell-padding-th);
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.markdown-rendered td,
+.markdown-preview-view td {
+  border-bottom: 1px solid var(--divider-color);
+  padding: var(--table-cell-padding);
+  color: var(--text-normal);
+}
+
+.markdown-rendered tr:nth-child(even),
+.markdown-preview-view tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.markdown-rendered tr:hover,
+.markdown-preview-view tr:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* ───────────────────────────────────────
+   Blockquotes & Callouts
+   ─────────────────────────────────────── */
+.markdown-rendered blockquote,
+.markdown-preview-view blockquote {
+  border-left: 2px solid var(--blockquote-border-color);
+  background-color: var(--blockquote-background-color);
+  padding: var(--blockquote-padding);
+  margin: var(--blockquote-margin);
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+.callout {
+  background-color: var(--blockquote-background-color);
+  border-left: 2px solid var(--blockquote-border-color);
+  border-radius: var(--radius-m);
+}
+
+.callout-title {
+  color: var(--text-normal);
+  font-family: var(--xuan-font-serif, var(--font-text));
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.callout-content {
+  color: var(--text-muted);
+}
+
+/* ───────────────────────────────────────
+   Links & Tags
+   ─────────────────────────────────────── */
+.markdown-rendered a,
+.markdown-source-view.mod-cm6 a {
+  color: var(--link-color);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.06em;
+}
+
+.markdown-rendered a:hover,
+.markdown-source-view.mod-cm6 a:hover {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+}
+
+.markdown-rendered a.external-link,
+.markdown-source-view.mod-cm6 a.external-link {
+  color: var(--link-external-color, var(--link-color));
+}
+
+.markdown-rendered a.external-link:hover,
+.markdown-source-view.mod-cm6 a.external-link:hover {
+  color: var(--link-external-color-hover, var(--link-color-hover));
+}
+
+.markdown-rendered a.internal-link.is-unresolved,
+.markdown-source-view.mod-cm6 a.internal-link.is-unresolved {
+  color: var(--link-unresolved-color);
+  opacity: var(--link-unresolved-opacity);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+  border: 1px solid var(--tag-border-color);
+  border-radius: 9999px;
+  height: var(--tag-height);
+  padding: 0 var(--tag-padding-x);
+  font-size: var(--code-inline-font-size);
+  line-height: var(--line-height-normal);
+  vertical-align: middle;
+}
+
+.tag:hover {
+  background-color: var(--tag-background);
+  background-color: color-mix(in oklch, var(--tag-background) 72%, var(--tag-color-hover));
+  color: var(--tag-color-hover);
+  border-color: var(--tag-color-hover);
+}
+
+/* ───────────────────────────────────────
+   Tasks & Lists
+   ─────────────────────────────────────── */
+.markdown-rendered ul,
+.markdown-preview-view ul,
+.markdown-rendered ol,
+.markdown-preview-view ol {
+  padding-left: var(--list-indent);
+  line-height: var(--line-height-normal);
+}
+
+.markdown-rendered li,
+.markdown-preview-view li {
+  margin: 0.6em 0;
+  line-height: var(--line-height-normal);
+}
+
+/* 任务行 li.task-list-item：flex 对齐 checkbox 与首行文字，覆盖 Obsidian 默认 */
+.markdown-rendered li.task-list-item,
+.markdown-preview-view li.task-list-item {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-inline-start: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.markdown-rendered li.task-list-item .list-bullet,
+.markdown-preview-view li.task-list-item .list-bullet {
+  width: 0 !important;
+  min-width: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0;
+  border: none;
+}
+
+/* 复选框按首行行高垂直居中，解决字体/行高导致「浮在上方」 */
+.markdown-rendered li.task-list-item .task-list-item-checkbox,
+.markdown-preview-view li.task-list-item .task-list-item-checkbox {
+  margin: 0 var(--spacing-s) 0 0 !important;
+  margin-top: calc((1em * var(--line-height-normal) - var(--task-checkbox-size)) / 2) !important;
+  flex-shrink: 0;
+}
+
+/* 任务复选框与首行文字垂直居中，减少字体换后错位 */
+.markdown-rendered input[type="checkbox"],
+.markdown-preview-view input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--task-checkbox-size);
+  height: var(--task-checkbox-size);
+  border: 1px solid var(--divider-color);
+  border-radius: 3px;
+  margin-right: var(--spacing-s);
+  margin-top: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: var(--background-primary);
+  flex-shrink: 0;
+}
+
+.markdown-rendered input[type="checkbox"]:hover,
+.markdown-preview-view input[type="checkbox"]:hover {
+  border-color: var(--background-modifier-border-hover);
+  box-shadow: 0 0 0 3px rgb(var(--xuan-shadow-rgb) / 0.06);
+}
+
+.markdown-rendered input[type="checkbox"]:checked,
+.markdown-preview-view input[type="checkbox"]:checked {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: var(--task-checkbox-size);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ───────────────────────────────────────
+   Media (Images/Videos)
+   ─────────────────────────────────────── */
+.markdown-rendered img,
+.markdown-preview-view img {
+  max-width: 100%;
+  border-radius: var(--radius-l);
+}
+
+.markdown-rendered video,
+.markdown-preview-view video {
+  max-width: 100%;
+  border-radius: var(--radius-l);
+}
+
+.markdown-preview-view img,
+.markdown-preview-view video {
+  display: block;
+  margin: var(--media-margin-block) auto;
+}
+
+/* ───────────────────────────────────────
+   Canvas
+   ─────────────────────────────────────── */
+.canvas-background {
+  background-color: var(--canvas-background);
+}
+
+.canvas-card {
+  background-color: var(--canvas-card-background);
+  border: 1px solid var(--canvas-card-border);
+  border-radius: var(--radius-l);
+}
+
+.canvas-controls button {
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+  border-radius: var(--radius-l);
+}
+
+/* ───────────────────────────────────────
+   PDF
+   ─────────────────────────────────────── */
+.pdf-viewer {
+  background-color: var(--pdf-background);
+}
+
+.pdf-viewer .page {
+  background-color: var(--pdf-background);
+  color: var(--pdf-text);
+}

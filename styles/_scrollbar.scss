@@ -1,0 +1,33 @@
+/* ========================================
+   Xuan Theme - Scrollbar
+   滚动条样式
+======================================== */
+
+/* 滚动条容器 z-index */
+.workspace-leaf-resize-handle + .view-content,
+.workspace-leaf .workspace-leaf-content,
+.view-content {
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  position: relative;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: var(--radius-s);
+  position: relative;
+  z-index: 10000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+}

@@ -1,0 +1,27 @@
+/* ========================================
+   Xuan Theme - Accessibility
+   无障碍支持
+======================================== */
+
+/* ───────────────────────────────────────
+   Focus Visible
+   ─────────────────────────────────────── */
+/* 移除默认 focus 轮廓，使用主题焦点色 */
+/* a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+} */
+
+/* ───────────────────────────────────────
+   Reduce Motion
+   ─────────────────────────────────────── */
+body.reduce-motion,
+body.reduce-motion * {
+  animation: none !important;
+  transition: none !important;
+}

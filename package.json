@@ -1,0 +1,27 @@
+{
+    "name": "obsidian-xuan-theme",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "sass styles/theme.scss theme.css --style=compressed --no-source-map",
+        "dev": "sass styles/theme.scss theme.css --style=expanded --source-map --watch",
+        "version": "node version-bump.mjs && git add manifest.json versions.json"
+    },
+    "description": "Obsidian 主题，宣纸质感、宋韵留白。",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sogud/obsidian-xuan.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/sogud/obsidian-xuan/issues"
+    },
+    "homepage": "https://github.com/sogud/obsidian-xuan#readme",
+    "devDependencies": {
+        "chokidar": "^5.0.0",
+        "sass": "^1.98.0"
+    }
+}

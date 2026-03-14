@@ -1,0 +1,168 @@
+/* ========================================
+   Xuan Theme - Dark Mode
+   墨色
+======================================== */
+
+.theme-dark {
+  /* ───────────────────────────────────────
+     Semantic Tokens
+     ─────────────────────────────────────── */
+  --xuan-paper-0: #242424;
+  --xuan-paper-1: #262626;
+  --xuan-desk-0: #2C2C2C;
+  --xuan-desk-1: #343434;
+
+  --xuan-ink-0: #C9C6C1;
+  --xuan-ink-1: #A7A39C;
+  --xuan-ink-2: #7A7A7A;
+
+  /* 印泥朱（夜间更暖、更明） */
+  --xuan-stamp-500: #D07B73;
+  --xuan-stamp-600: #E0A8A0; /* fallback for hover */
+  --xuan-stamp-wash: rgba(208, 123, 115, 0.22); /* fallback for tints */
+
+  --xuan-divider: rgba(255, 255, 255, 0.08);
+  --xuan-guide: rgba(255, 255, 255, 0.05);
+  --xuan-paper-outline: rgba(255, 255, 255, 0.06);
+  --xuan-shadow-rgb: 0 0 0;
+  --xuan-texture-opacity: 0.012;
+  --xuan-focus-ring: rgb(208 123 115 / 0.22);
+
+  /* Prefer perceptual mixing when supported. */
+  --xuan-stamp-600: color-mix(in oklch, var(--xuan-stamp-500) 78%, white);
+  --xuan-stamp-wash: color-mix(in oklch, var(--xuan-stamp-500) 22%, transparent);
+
+  /* Brand mapping */
+  --xuan-accent: var(--xuan-stamp-500);
+  --xuan-accent-hover: var(--xuan-stamp-600);
+  --xuan-accent-light: var(--xuan-stamp-wash);
+
+  /* ───────────────────────────────────────
+     Background
+     ─────────────────────────────────────── */
+  --background-primary: var(--xuan-paper-0);
+  --background-secondary: var(--xuan-desk-0);
+  --background-primary-alt: var(--xuan-desk-0);
+  --background-secondary-alt: var(--xuan-desk-1);
+  
+  /* ───────────────────────────────────────
+     Background Modifiers
+     ─────────────────────────────────────── */
+  --background-modifier-border: #3D3D3D;
+  --background-modifier-border-hover: #4D4D4D;
+  --background-modifier-border-focus: #5D5D5D;
+  --background-modifier-hover: rgba(80, 80, 80, 0.35);
+  --background-modifier-active-hover: rgba(95, 95, 95, 0.45);
+  --background-modifier-error: #3D2323;
+  --background-modifier-success: #1B3321;
+  --background-modifier-form-field: #2A2A2A;
+  --background-modifier-form-field: color-mix(in oklch, var(--xuan-paper-0) 75%, black);
+  
+  /* ───────────────────────────────────────
+     Xuan Surfaces（半透明）
+     ─────────────────────────────────────── */
+  --xuan-surface-0: rgba(44, 44, 44, 0.72);
+  --xuan-surface-1: rgba(44, 44, 44, 0.88);
+  /* --xuan-divider is defined in semantic tokens above */
+  
+  /* ───────────────────────────────────────
+     Text
+     ─────────────────────────────────────── */
+  --text-normal: var(--xuan-ink-0);
+  --text-muted: var(--xuan-ink-1);
+  --text-faint: var(--xuan-ink-2);
+  --text-on-accent: #FFFFFF;
+  --text-error: var(--xuan-accent);
+  --text-success: #8FBC8F;
+  --text-selection: rgb(208 123 115 / 0.24);
+  --text-selection: color-mix(in oklch, var(--xuan-stamp-500) 22%, transparent);
+  
+  /* ───────────────────────────────────────
+     Interactive
+     ─────────────────────────────────────── */
+  --interactive-accent: var(--xuan-accent);
+  --interactive-accent-hover: var(--xuan-accent-hover);
+  --interactive-normal: #3D3D3D;
+  --interactive-hover: #4D4D4D;
+  --interactive-active: #5D5D5D;
+  
+  /* ───────────────────────────────────────
+     Divider
+     ─────────────────────────────────────── */
+  --divider-color: #3D3D3D;
+  --divider-width-hover: 1px;
+  
+  /* ───────────────────────────────────────
+     Code
+     ─────────────────────────────────────── */
+  --code-background: #2C2C2C;
+  --code-normal: #C9C6C1;
+  --code-comment: var(--text-faint);
+  --code-function: var(--xuan-accent);
+  --code-keyword: #909090;
+  --code-string: #8FBC8F;
+  --code-operator: #909090;
+  --code-property: #7AAADC;
+  --code-punctuation: var(--text-faint);
+  --code-tag: var(--xuan-accent);
+  --code-value: #8FBC8F;
+  
+  /* ───────────────────────────────────────
+     Blockquote
+     ─────────────────────────────────────── */
+  --blockquote-border-color: var(--xuan-accent);
+  --blockquote-background-color: #252525;
+  --blockquote-background-color: color-mix(in oklch, var(--xuan-paper-0) 75%, var(--xuan-desk-0));
+  
+  /* ───────────────────────────────────────
+     Tag
+     ─────────────────────────────────────── */
+  --tag-background: #343434;
+  --tag-background: color-mix(in oklch, var(--xuan-stamp-500) 10%, var(--xuan-desk-0));
+  --tag-color: var(--text-normal);
+  --tag-color-hover: var(--xuan-accent);
+  --tag-border-color: transparent;
+  
+  /* ───────────────────────────────────────
+     Link
+     ─────────────────────────────────────── */
+  --link-color: var(--xuan-accent);
+  --link-color-hover: var(--xuan-accent-hover);
+  --link-decoration: underline;
+  --link-decoration-hover: underline;
+  --link-unresolved-color: var(--text-faint);
+  --link-unresolved-opacity: 1;
+  
+  /* ───────────────────────────────────────
+     Scrollbar
+     ─────────────────────────────────────── */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: #444444;
+  --scrollbar-thumb-hover-bg: #555555;
+  
+  /* ───────────────────────────────────────
+     Canvas
+     ─────────────────────────────────────── */
+  --canvas-background: #242424;
+  --canvas-card-background: #2C2C2C;
+  --canvas-card-border: #3D3D3D;
+  --canvas-dot-pattern: #3D3D3D;
+  
+  /* ───────────────────────────────────────
+     PDF
+     ─────────────────────────────────────── */
+  --pdf-background: #2C2C2C;
+  --pdf-text: var(--text-normal);
+  
+  /* ───────────────────────────────────────
+     Color Palette (for plugins)
+     ─────────────────────────────────────── */
+  --color-red-rgb: 208, 123, 115;
+  --color-orange-rgb: 200, 135, 95;
+  --color-yellow-rgb: 185, 170, 90;
+  --color-green-rgb: 100, 160, 105;
+  --color-cyan-rgb: 90, 160, 155;
+  --color-blue-rgb: 100, 140, 200;
+  --color-purple-rgb: 145, 120, 180;
+  --color-pink-rgb: 195, 110, 145;
+}

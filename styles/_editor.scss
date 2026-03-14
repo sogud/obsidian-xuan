@@ -1,0 +1,106 @@
+/* ========================================
+   Xuan Theme - Editor
+   编辑器与预览：统一字体、行高，避免「有的有有的没有」和对齐乱
+======================================== */
+
+/* ───────────────────────────────────────
+   CodeMirror 6（编辑区）
+   ─────────────────────────────────────── */
+.markdown-source-view.mod-cm6 .cm-editor,
+.markdown-source-view.mod-cm6 .cm-scroller {
+  font-family: var(--font-text);
+  line-height: var(--line-height-normal);
+}
+
+.markdown-source-view.mod-cm6 .cm-content {
+  font-family: var(--font-text);
+  line-height: var(--line-height-normal);
+}
+
+/* ───────────────────────────────────────
+   Legacy CM5 (fallback)
+   ─────────────────────────────────────── */
+.cm-s-obsidian {
+  font-family: var(--font-text);
+  line-height: var(--line-height-normal);
+}
+
+/* ───────────────────────────────────────
+   Reading View（阅读视图）
+   ─────────────────────────────────────── */
+.markdown-preview-view,
+.markdown-rendered {
+  font-family: var(--font-text);
+  line-height: var(--line-height-normal);
+}
+
+.markdown-preview-view {
+  padding: var(--spacing-xl) 28px;
+}
+
+/* ───────────────────────────────────────
+   Headings（编辑区 + 阅读视图 统一）
+   ─────────────────────────────────────── */
+.markdown-rendered h1,
+.markdown-preview-view h1,
+.markdown-rendered h2,
+.markdown-preview-view h2,
+.markdown-rendered h3,
+.markdown-preview-view h3 {
+  font-family: var(--xuan-font-serif);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: var(--text-normal);
+  line-height: var(--xuan-leading-head);
+}
+
+.markdown-rendered h1,
+.markdown-preview-view h1 {
+  font-size: var(--xuan-h1);
+  margin: 1.2em 0 0.55em;
+}
+
+.markdown-rendered h2,
+.markdown-preview-view h2 {
+  font-size: var(--xuan-h2);
+  margin: 1.15em 0 0.5em;
+}
+
+.markdown-rendered h3,
+.markdown-preview-view h3 {
+  font-size: var(--xuan-h3);
+  margin: 1.05em 0 0.45em;
+}
+
+.markdown-source-view.mod-cm6 .cm-header {
+  font-family: var(--xuan-font-serif);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  line-height: var(--xuan-leading-head);
+}
+
+.markdown-source-view.mod-cm6 .cm-header-1 { font-size: var(--xuan-h1); }
+.markdown-source-view.mod-cm6 .cm-header-2 { font-size: var(--xuan-h2); }
+.markdown-source-view.mod-cm6 .cm-header-3 { font-size: var(--xuan-h3); }
+
+/* ───────────────────────────────────────
+   Paragraph
+   ─────────────────────────────────────── */
+.markdown-rendered p,
+.markdown-preview-view p {
+  margin: 0.85em 0 1.05em;
+}
+
+/* ───────────────────────────────────────
+   Inline Elements
+   ─────────────────────────────────────── */
+.markdown-rendered strong,
+.markdown-source-view.mod-cm6 strong {
+  color: var(--text-normal);
+  font-weight: 600;
+}
+
+.markdown-rendered em,
+.markdown-source-view.mod-cm6 em {
+  color: var(--text-muted);
+}

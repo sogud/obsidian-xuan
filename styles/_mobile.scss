@@ -1,0 +1,36 @@
+/* ========================================
+   Xuan Theme - Mobile
+   移动端响应式
+======================================== */
+
+@media (max-width: 768px) {
+  .workspace {
+    background-image: none;
+  }
+
+  .workspace-split.mod-root .workspace-tab-container {
+    box-shadow: none;
+  }
+
+  /* ───────────────────────────────────────
+     Layout
+     ─────────────────────────────────────── */
+  .workspace-ribbon {
+    display: none;
+  }
+  
+  .workspace-tab-header-container {
+    height: 44px;
+  }
+  
+  /* ───────────────────────────────────────
+     Editor
+     ─────────────────────────────────────── */
+  .markdown-preview-view {
+    padding: 20px;
+  }
+  
+  .markdown-source-view.mod-cm6 .cm-editor {
+    padding: 20px;
+  }
+}

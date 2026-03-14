@@ -1,0 +1,135 @@
+/* ========================================
+   Xuan Theme - Root Variables
+   根变量：字体、间距、圆角、动画
+======================================== */
+
+:root {
+  /* ───────────────────────────────────────
+     Fonts（宣纸 + 宋韵 推荐搭配见下）
+     ─────────────────────────────────────── */
+  /* 正文/UI：不写死字体，用系统/Obsidian 默认，你可在设置或片段里改 --font-text */
+  --xuan-font-sans: var(--font-text);
+  /* 标题/强调：与正文同字体，不默认改；要区分标题字体可自己在片段里设 --xuan-font-serif */
+  --xuan-font-serif: var(--font-text);
+  /* 等宽：跟随 Obsidian 设置 */
+  --xuan-font-mono: var(--font-monospace);
+
+  /* 不覆盖 Obsidian 的 --font-text / --font-monospace，用你在「设置 → 外观 → 字体」里选的 */
+  /* Compatibility（片段里若用到） */
+  --font-text-zh: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  
+  /* ───────────────────────────────────────
+     Sizes
+     ─────────────────────────────────────── */
+  --font-ui-smaller: 12px;
+  --font-ui-small: 13px;
+  --font-ui-medium: 15px;
+  --font-ui-large: 20px;
+  
+  --header-height: 48px;
+  --tab-height: 44px;
+  --input-height: 32px;
+
+  /* ───────────────────────────────────────
+     Spacing
+     ─────────────────────────────────────── */
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 12px;
+  --spacing-l: 16px;
+  --spacing-xl: 24px;
+  
+  /* ───────────────────────────────────────
+     Radius
+     ─────────────────────────────────────── */
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --radius-xl: 28px;
+  --xuan-radius-control: 8px;
+  
+  /* ───────────────────────────────────────
+     Shadows
+     ─────────────────────────────────────── */
+  /* Shadow uses warm ink-rgb; per-theme can override --xuan-shadow-rgb. */
+  --xuan-shadow-rgb: 45 38 32;
+  --shadow-s: 0 1px 2px rgb(var(--xuan-shadow-rgb) / 0.08), 0 4px 14px rgb(var(--xuan-shadow-rgb) / 0.06);
+  --shadow-m: 0 2px 6px rgb(var(--xuan-shadow-rgb) / 0.10), 0 14px 30px rgb(var(--xuan-shadow-rgb) / 0.08);
+  --shadow-l: 0 4px 12px rgb(var(--xuan-shadow-rgb) / 0.12), 0 22px 56px rgb(var(--xuan-shadow-rgb) / 0.10);
+
+  /* Elevations for UI surfaces (menus/modals). */
+  --xuan-elevation-1: 0 1px 0 rgb(var(--xuan-shadow-rgb) / 0.06), 0 10px 24px rgb(var(--xuan-shadow-rgb) / 0.07);
+  --xuan-elevation-2: 0 2px 0 rgb(var(--xuan-shadow-rgb) / 0.08), 0 16px 34px rgb(var(--xuan-shadow-rgb) / 0.10);
+  --xuan-elevation-3: 0 2px 0 rgb(var(--xuan-shadow-rgb) / 0.10), 0 22px 64px rgb(var(--xuan-shadow-rgb) / 0.12);
+  
+  /* ───────────────────────────────────────
+     Animation（减少动画：时长为 0，需恢复时改为 150ms / 250ms）
+     ─────────────────────────────────────── */
+  --anim-duration-fast: 0ms;
+  --anim-duration-moderate: 0ms;
+  --anim-duration-slow: 0ms;
+  --anim-motion-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ───────────────────────────────────────
+     Typography tokens（统一行高，减少对齐乱）
+     ─────────────────────────────────────── */
+  --xuan-leading-body: 1.82;
+  --xuan-leading-head: 1.26;
+  /* 编辑区、阅读视图、列表共用，Obsidian 也会读 --line-height-normal */
+  --line-height-normal: var(--xuan-leading-body);
+
+  --xuan-h1: 28px;
+  --xuan-h2: 22px;
+  --xuan-h3: 18px;
+
+  /* ───────────────────────────────────────
+     Paper texture (subtle, can be disabled)
+     ─────────────────────────────────────── */
+  --xuan-texture-enabled: 1;
+  --xuan-texture-opacity: 0.035;
+  --xuan-texture-alpha: calc(var(--xuan-texture-opacity) * var(--xuan-texture-enabled));
+  --xuan-focus-ring: rgb(184 80 70 / 0.18);
+  
+  /* ───────────────────────────────────────
+     Icon
+     ─────────────────────────────────────── */
+  --icon-size: 16px;
+  --icon-stroke: 2px;
+  --icon-opacity: 0.7;
+  --icon-opacity-hover: 1;
+  
+  /* ───────────────────────────────────────
+     Density
+     ─────────────────────────────────────── */
+  --density-modifier: 1;
+
+  /* ───────────────────────────────────────
+     Layout / Component (复用 spacing，减少魔法数字)
+     ─────────────────────────────────────── */
+  --ribbon-padding-x: var(--spacing-m);
+  --view-header-padding: var(--spacing-xs) 10px;
+  --view-header-min-height: 36px;
+  --sidedock-content-padding: 2px 6px 2px var(--spacing-l);
+  --nav-header-padding: var(--spacing-s) var(--spacing-l);
+  --tab-inner-padding-x: var(--spacing-s);
+  --tab-inner-padding-y: var(--spacing-s);
+  --button-padding-block: var(--spacing-s);
+  --button-padding-inline: var(--spacing-l);
+  --input-border-width: 1px;
+  --focus-ring-width: 3px;
+  --code-inline-padding: 2px var(--spacing-s);
+  --code-inline-font-size: 0.85em;
+  --code-block-padding: var(--spacing-m);
+  --table-cell-padding-th: var(--spacing-s) 14px;
+  --table-cell-padding: 6px 14px;
+  --blockquote-padding: 10px 18px;
+  --blockquote-margin: 18px 0;
+  --tag-height: 22px;
+  --tag-padding-x: 10px;
+  --list-indent: 1.5em;
+  --task-checkbox-size: 16px;
+  --media-margin-block: var(--spacing-l);
+  --checkbox-toggle-width: 28px;
+  --checkbox-toggle-height: 16px;
+  --checkbox-toggle-thumb: 12px;
+}

@@ -1,0 +1,343 @@
+/* ========================================
+   Xuan Theme - Layout
+   界面布局：侧边栏、标签页、状态栏
+   
+======================================== */
+
+/* ───────────────────────────────────────
+   Paper Texture & Layering (Desk vs Paper)
+   ─────────────────────────────────────── */
+body {
+  background-color: var(--background-secondary);
+  /* 文件树间距（Obsidian 会读取） */
+  --nav-item-padding: calc(8px * var(--density-modifier)) 16px calc(8px * var(--density-modifier)) 16px;
+  --nav-indentation-guide-width: 0px;
+}
+
+.workspace {
+  background-color: var(--background-secondary);
+  background-image:
+    radial-gradient(
+      1200px 900px at 30% -20%,
+      rgb(var(--xuan-shadow-rgb) / calc(var(--xuan-texture-alpha) * 1.1)) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      900px 700px at 115% 0%,
+      rgb(var(--xuan-shadow-rgb) / calc(var(--xuan-texture-alpha) * 0.8)) 0%,
+      transparent 62%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgb(var(--xuan-shadow-rgb) / calc(var(--xuan-texture-alpha) * 0.14)) 0 1px,
+      transparent 1px 13px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(var(--xuan-shadow-rgb) / calc(var(--xuan-texture-alpha) * 0.10)) 0 1px,
+      transparent 1px 19px
+    );
+  background-blend-mode: multiply;
+}
+
+/* Main editor "paper"：只保留内描边，不用外阴影，避免与侧栏阴影重叠 */
+body:not(.is-phone) .workspace-split.mod-root .workspace-tab-container {
+  background-color: var(--xuan-paper-1, var(--background-primary));
+  box-shadow: 0 0 0 1px var(--xuan-paper-outline, var(--xuan-divider, var(--divider-color))) inset;
+}
+
+/* Right sidebar：同上，避免悬浮阴影重叠 */
+body:not(.is-phone) .workspace-split.mod-right-split .workspace-tab-container {
+  background-color: var(--xuan-paper-1, var(--background-primary));
+  box-shadow: 0 0 0 1px var(--xuan-paper-outline, var(--xuan-divider, var(--divider-color))) inset;
+}
+
+body:not(.is-phone) .workspace-split.mod-root .workspace-leaf {
+  background-color: transparent;
+}
+
+.workspace-leaf {
+  background-color: var(--background-primary);
+}
+
+.view-content,
+.workspace-leaf-content {
+  background-color: var(--background-primary);
+}
+
+/* ───────────────────────────────────────
+   Workspace Ribbon (Left Sidebar)
+   ─────────────────────────────────────── */
+.workspace-ribbon {
+  background-color: transparent;
+  border-right: none;
+  z-index: 11;
+}
+
+.workspace-ribbon.mod-left {
+  padding-left: var(--ribbon-padding-x);
+}
+
+.workspace-ribbon.mod-left:before {
+  content: none;
+}
+
+.workspace-ribbon.mod-left .sidebar-toggle-button {
+  position: relative;
+  display: flex;
+  height: var(--header-height);
+  padding: var(--spacing-s);
+  width: unset;
+  align-items: center;
+  justify-content: center;
+}
+
+.workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon {
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.workspace-ribbon.mod-left .side-dock-actions {
+  gap: var(--spacing-xs);
+  z-index: 1;
+  color: var(--icon-color);
+}
+
+.workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon,
+.workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action {
+  width: var(--tab-action-width, 32px);
+}
+
+.workspace-ribbon.mod-right {
+  border-left: none;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: var(--xuan-surface-0, var(--background-secondary));
+  color: var(--text-muted);
+}
+
+/* 右侧 ribbon 折叠(is-collapsed) 时，Obsidian 默认会把唯一按钮垂直居中，这里强制改为顶部对齐 */
+.workspace-ribbon.mod-right.is-collapsed {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: var(--spacing-s);
+}
+
+/* 右侧展开/收起按钮：与左侧一致的图标色和 hover，避免颜色奇怪 */
+.workspace-ribbon.mod-right .sidebar-toggle-button {
+  height: var(--header-height);
+  min-height: var(--header-height);
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-s);
+  color: inherit;
+}
+
+.workspace-ribbon.mod-right .sidebar-toggle-button .clickable-icon {
+  color: var(--text-muted);
+  opacity: var(--icon-opacity, 0.85);
+}
+
+.workspace-ribbon.mod-right .sidebar-toggle-button:hover .clickable-icon {
+  color: var(--text-normal);
+  opacity: var(--icon-opacity-hover, 1);
+}
+
+.workspace-ribbon.mod-right .sidebar-toggle-button:hover {
+  background-color: var(--background-modifier-hover);
+  border-radius: var(--radius-s);
+}
+
+/* 折叠状态下，右侧 ribbon 里所有动作按钮都贴近顶部（包括展开按钮） */
+.workspace-ribbon.mod-right.is-collapsed .side-dock-ribbon-action {
+  align-self: flex-start;
+}
+
+/* macOS 无边框时右侧展开按钮：不要背景色 */
+body.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
+  background-color: transparent;
+}
+
+/* ───────────────────────────────────────
+   Tab Header Container
+   ─────────────────────────────────────── */
+body:not(.is-phone) .workspace-tab-header-container {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.sidebar-toggle-button {
+  height: var(--header-height);
+  min-height: var(--header-height);
+  padding-bottom: var(--spacing-s);
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-toggle-button .clickable-icon {
+  width: fit-content;
+  height: fit-content;
+}
+
+.workspace-tab-header-inner-icon {
+  color: inherit !important;
+}
+
+/* ───────────────────────────────────────
+   Tab Container (Editor Panel)
+   ─────────────────────────────────────── */
+body:not(.is-phone) .workspace .mod-root {
+  .workspace-tab-header-container-inner {
+    padding: var(--spacing-s) var(--tab-curve) 0;
+    margin: 0 calc(-1 * var(--spacing-xs)) 0 0;
+    gap: var(--spacing-s);
+  }
+
+  .workspace-tab-header {
+    --tab-outline-width: 0px;
+    padding: 0;
+  }
+
+  .workspace-tab-header-inner {
+    padding-inline-start: var(--spacing-m);
+    padding-inline-end: var(--spacing-s);
+    margin-bottom: var(--spacing-s);
+    height: auto;
+  }
+
+  .workspace-tab-header-inner-title {
+    line-height: normal;
+    text-align: var(--tab-text-align, left);
+  }
+
+  .workspace-tab-header-new-tab,
+  .workspace-tab-header-tab-list {
+    display: block;
+    align-content: center;
+    padding: var(--spacing-xs) 0;
+    margin: 0;
+  }
+
+  .workspace-tab-header-new-tab .clickable-icon,
+  .workspace-tab-header-tab-list .clickable-icon {
+    height: auto;
+    padding: var(--spacing-s);
+  }
+}
+
+.workspace-split.mod-root .workspace-tab-container {
+  border-left: none;
+}
+
+.workspace-tabs {
+  background-color: transparent;
+}
+
+/* ───────────────────────────────────────
+   View Header
+   ─────────────────────────────────────── */
+.view-header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--xuan-divider, var(--divider-color));
+  padding: var(--view-header-padding);
+  min-height: var(--view-header-min-height);
+}
+
+.view-header-title {
+  color: var(--text-normal);
+}
+
+/* ───────────────────────────────────────
+   Status Bar
+   ─────────────────────────────────────── */
+.status-bar {
+  background-color: transparent;
+  border-top: none;
+  color: var(--text-faint);
+}
+
+/* ───────────────────────────────────────
+   Sidebar
+   ─────────────────────────────────────── */
+.workspace-sidebar {
+  background-color: var(--xuan-surface-0, var(--background-secondary));
+  border-right: none;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: stretch;
+  padding: var(--nav-header-padding);
+}
+
+.nav-header .nav-buttons-container {
+  flex-wrap: nowrap;
+}
+
+.nav-header .search-input-container {
+  margin: var(--spacing-s) 0;
+  width: 100%;
+}
+
+.nav-action-button,
+.nav-action-button[aria-disabled="true"] {
+  position: relative;
+  height: 100%;
+}
+
+.nav-files-container {
+  color: var(--text-normal);
+}
+
+/* 侧栏内容区内边距 */
+body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .view-content,
+body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .node-insert-event {
+  padding: var(--sidedock-content-padding);
+}
+
+/* 文件树：padding、去掉阴影和左侧条 */
+.nav-files-container .tree-item-self {
+  padding: var(--nav-item-padding) !important;
+  align-items: center;
+  box-shadow: none !important;
+  border-left: none !important;
+}
+
+.nav-files-container .tree-item-inner {
+  box-shadow: none !important;
+  border-left: none !important;
+}
+
+.tree-item-self,
+.tree-item-inner {
+  align-items: center;
+}
+
+.tree-item {
+  color: var(--text-normal);
+}
+
+/* 文件和文件夹不显示 hover 背景色 */
+.tree-item:hover {
+  background-color: transparent;
+}
+
+.tree-item.is-active {
+  background-color: var(--background-modifier-active-hover);
+}
+
+.tree-item,
+.tree-item:hover .tree-item-self,
+.tree-item.is-active .tree-item-self,
+.tree-item.is-active .tree-item-inner {
+  box-shadow: none !important;
+  border-left: none !important;
+}
+
+.workspace-leaf-resize-handle {
+  background-color: var(--xuan-guide, var(--xuan-divider, var(--divider-color))) !important;
+  border-inline-end-style: none !important;
+  z-index: 1;
+}

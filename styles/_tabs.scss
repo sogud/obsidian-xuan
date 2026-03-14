@@ -1,0 +1,138 @@
+/* ========================================
+   Xuan Theme - Tabs
+   标签页样式
+   
+======================================== */
+
+/* ───────────────────────────────────────
+   Tab Variables
+   ─────────────────────────────────────── */
+body {
+  --header-height: 48px;
+  --tab-max-width: var(--tab-width, auto);
+  --tab-radius: var(--radius-s);
+  --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
+  --tab-curve: calc(var(--tab-radius) + 4px);
+  --tab-outline-width: 0px;
+  --tab-divider-color: var(--background-modifier-border);
+  --tab-text-align: left;
+  --tab-text-color-focused-active: var(--text-normal);
+  --tab-text-color-focused-active-current: unset;
+}
+
+body:not(.is-mobile) {
+  --tab-action-width: 32px;
+}
+
+/* ───────────────────────────────────────
+   Tab Header
+   ─────────────────────────────────────── */
+.workspace-tab-header-container {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+/* ───────────────────────────────────────
+   Tab Inner
+   ─────────────────────────────────────── */
+.workspace-tab-header-inner {
+  gap: var(--spacing-s);
+  border-radius: var(--tab-radius);
+  background-color: transparent;
+}
+
+.workspace-tab-header-inner-icon {
+  color: var(--icon-color);
+  opacity: var(--icon-opacity);
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner-icon {
+  opacity: var(--icon-opacity-hover);
+}
+
+/* ───────────────────────────────────────
+   Tab States
+   ─────────────────────────────────────── */
+.workspace-tab-header:not(.is-active):not(:hover) {
+  opacity: 0.72;
+}
+
+.workspace-tab-header.is-active {
+  background-color: transparent;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner {
+  background-color: var(--background-primary);
+  box-shadow: none;
+}
+
+.workspace-tab-header:not(.is-active):hover {
+  background-color: transparent;
+}
+
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+  background-color: var(--background-modifier-hover);
+}
+
+/* ───────────────────────────────────────
+   New Tab & Tab List
+   ─────────────────────────────────────── */
+.workspace-tab-header-new-tab .clickable-icon,
+.workspace-tab-header-tab-list .clickable-icon {
+  padding: var(--spacing-s);
+  border-radius: var(--radius-s);
+}
+
+.workspace-tab-header-new-tab .clickable-icon:hover,
+.workspace-tab-header-tab-list .clickable-icon:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* ───────────────────────────────────────
+   Tab Content
+   ─────────────────────────────────────── */
+.workspace-tabs {
+  background-color: transparent;
+}
+
+.workspace-leaf {
+  background-color: var(--background-primary);
+}
+
+/* ───────────────────────────────────────
+   Side panels 侧栏标签区
+   ─────────────────────────────────────── */
+.workspace .mod-sidedock {
+.workspace-tab-header-container {
+  padding-block: var(--spacing-s);
+  align-items: center;
+}
+  .workspace-tab-header-container-inner {
+    padding: 0 var(--spacing-s) 0 0;
+    margin: 0;
+    gap: calc(var(--spacing-s) * var(--density-modifier, 1));
+    height: 100%;
+  }
+  .workspace-tab-header-inner {
+    gap: var(--spacing-s);
+  }
+  .workspace-tab-header:not(.is-active):not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+/* ───────────────────────────────────────
+   View Header Actions
+   ─────────────────────────────────────── */
+.view-header-nav-buttons {
+  gap: var(--spacing-s);
+}
+
+.view-header-nav-buttons .clickable-icon {
+  padding: var(--spacing-s);
+  border-radius: var(--radius-s);
+}
+
+.view-header-nav-buttons .clickable-icon:hover {
+  background-color: var(--background-modifier-hover);
+}
