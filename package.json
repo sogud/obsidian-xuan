@@ -4,6 +4,7 @@
     "scripts": {
         "build": "sass styles/theme.scss theme.css --style=compressed --no-source-map",
         "dev": "sass styles/theme.scss theme.css --style=expanded --source-map --watch",
+        "test:switch": "bash scripts/test-switch-square.sh",
         "version": "node version-bump.mjs && git add manifest.json versions.json"
     },
     "description": "Obsidian 主题，宣纸质感、宋韵留白。",

@@ -3,20 +3,49 @@
    根变量：字体、间距、圆角、动画
 ======================================== */
 
+@font-face {
+  font-family: "Xuan WenKai";
+  src:
+    local("LXGW WenKai"),
+    local("LXGW WenKai Regular"),
+    local("霞鹜文楷");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Xuan WenKai";
+  src:
+    local("LXGW WenKai Medium"),
+    local("霞鹜文楷 Medium");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Xuan WenKai Mono";
+  src:
+    local("LXGW WenKai Mono"),
+    local("LXGW WenKai Mono Regular");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   /* ───────────────────────────────────────
      Fonts（宣纸 + 宋韵 推荐搭配见下）
      ─────────────────────────────────────── */
-  /* 正文/UI：不写死字体，用系统/Obsidian 默认，你可在设置或片段里改 --font-text */
-  --xuan-font-sans: var(--font-text);
-  /* 标题/强调：与正文同字体，不默认改；要区分标题字体可自己在片段里设 --xuan-font-serif */
-  --xuan-font-serif: var(--font-text);
-  /* 等宽：跟随 Obsidian 设置 */
-  --xuan-font-mono: var(--font-monospace);
+  --xuan-font-ui: "Xuan WenKai", "LXGW WenKai", "霞鹜文楷", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", var(--font-interface), sans-serif;
+  --xuan-font-text: "Xuan WenKai", "LXGW WenKai", "霞鹜文楷", var(--font-text), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --xuan-font-serif: "Xuan WenKai", "LXGW WenKai", "霞鹜文楷", var(--font-text), serif;
+  --xuan-font-mono: "Xuan WenKai Mono", "LXGW WenKai Mono", "Source Code Pro", var(--font-monospace), monospace;
+  --xuan-font-sans: var(--xuan-font-text);
 
-  /* 不覆盖 Obsidian 的 --font-text / --font-monospace，用你在「设置 → 外观 → 字体」里选的 */
   /* Compatibility（片段里若用到） */
-  --font-text-zh: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-text-zh: "Xuan WenKai", "LXGW WenKai", "霞鹜文楷", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   
   /* ───────────────────────────────────────
      Sizes
@@ -42,11 +71,53 @@
   /* ───────────────────────────────────────
      Radius
      ─────────────────────────────────────── */
-  --radius-s: 8px;
-  --radius-m: 12px;
-  --radius-l: 20px;
-  --radius-xl: 28px;
-  --xuan-radius-control: 8px;
+  --radius-s: 2px;
+  --radius-m: 3px;
+  --radius-l: 4px;
+  --radius-xl: 6px;
+  --xuan-radius-control: 2px;
+  --button-radius: var(--xuan-radius-control);
+  --input-radius: var(--xuan-radius-control);
+  --dropdown-radius: var(--xuan-radius-control);
+  --modal-radius: var(--radius-m);
+  --tag-radius: var(--radius-m);
+  --checkbox-radius: 2px;
+  --xuan-switch-radius: 0px;
+  --xuan-switch-thumb-radius: 0px;
+  --xuan-switch-width: 44px;
+  --xuan-switch-height: 24px;
+  --xuan-switch-thumb-width: 20px;
+  --xuan-switch-thumb-height: 20px;
+  --xuan-switch-inset: 2px;
+  --xuan-switch-track: var(--interactive-normal);
+  --xuan-switch-track-hover: var(--interactive-hover);
+  --xuan-switch-track-enabled: var(--interactive-active);
+  --xuan-switch-border: var(--background-modifier-border);
+  --xuan-switch-border-enabled: var(--background-modifier-border-hover);
+  --xuan-switch-thumb: var(--background-primary);
+  --xuan-switch-thumb-enabled: var(--background-primary);
+  --toggle-radius: var(--xuan-switch-radius);
+  --toggle-thumb-radius: var(--xuan-switch-thumb-radius);
+  --toggle-width: var(--xuan-switch-width);
+  --toggle-height: var(--xuan-switch-height);
+  --toggle-thumb-width: var(--xuan-switch-thumb-width);
+  --toggle-thumb-height: var(--xuan-switch-thumb-height);
+  --toggle-background: var(--xuan-switch-track);
+  --toggle-background-active: var(--xuan-switch-track-enabled);
+  --toggle-border-color: var(--xuan-switch-border);
+  --toggle-border-color-active: var(--xuan-switch-border-enabled);
+  --toggle-thumb-color: var(--xuan-switch-thumb);
+  --toggle-thumb-color-active: var(--xuan-switch-thumb-enabled);
+  --tab-radius: var(--radius-s);
+  --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
+  --prompt-border-radius: var(--modal-radius);
+  --menu-radius: var(--radius-m);
+  --popover-radius: var(--radius-m);
+  --slider-thumb-radius: 2px;
+  --slider-track-radius: 2px;
+  --nav-item-radius: var(--radius-s);
+  --metadata-input-radius: var(--xuan-radius-control);
+  --embed-border-radius: var(--radius-m);
   
   /* ───────────────────────────────────────
      Shadows
@@ -88,15 +159,15 @@
   --xuan-texture-enabled: 1;
   --xuan-texture-opacity: 0.035;
   --xuan-texture-alpha: calc(var(--xuan-texture-opacity) * var(--xuan-texture-enabled));
-  --xuan-focus-ring: rgb(184 80 70 / 0.18);
+  --xuan-focus-ring: rgb(166 90 82 / 0.14);
   
   /* ───────────────────────────────────────
      Icon
      ─────────────────────────────────────── */
-  --icon-size: 16px;
-  --icon-stroke: 2px;
-  --icon-opacity: 0.7;
-  --icon-opacity-hover: 1;
+  --icon-size: 15px;
+  --icon-stroke: 1.65px;
+  --icon-opacity: 0.58;
+  --icon-opacity-hover: 0.86;
   
   /* ───────────────────────────────────────
      Density
@@ -115,6 +186,10 @@
   --tab-inner-padding-y: var(--spacing-s);
   --button-padding-block: var(--spacing-s);
   --button-padding-inline: var(--spacing-l);
+  --dropdown-padding-block: 0;
+  --dropdown-padding-inline: 10px 30px;
+  --dropdown-background-position: right 10px center;
+  --dropdown-background-size: 14px;
   --input-border-width: 1px;
   --focus-ring-width: 3px;
   --code-inline-padding: 2px var(--spacing-s);
@@ -129,7 +204,8 @@
   --list-indent: 1.5em;
   --task-checkbox-size: 16px;
   --media-margin-block: var(--spacing-l);
-  --checkbox-toggle-width: 28px;
-  --checkbox-toggle-height: 16px;
-  --checkbox-toggle-thumb: 12px;
+  --checkbox-toggle-width: var(--xuan-switch-width);
+  --checkbox-toggle-height: var(--xuan-switch-height);
+  --checkbox-toggle-thumb: var(--xuan-switch-thumb-width);
+  --checkbox-toggle-offset: calc(var(--xuan-switch-inset) - var(--input-border-width));
 }

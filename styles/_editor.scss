@@ -8,12 +8,12 @@
    ─────────────────────────────────────── */
 .markdown-source-view.mod-cm6 .cm-editor,
 .markdown-source-view.mod-cm6 .cm-scroller {
-  font-family: var(--font-text);
+  font-family: var(--xuan-font-text);
   line-height: var(--line-height-normal);
 }
 
 .markdown-source-view.mod-cm6 .cm-content {
-  font-family: var(--font-text);
+  font-family: var(--xuan-font-text);
   line-height: var(--line-height-normal);
 }
 
@@ -21,7 +21,7 @@
    Legacy CM5 (fallback)
    ─────────────────────────────────────── */
 .cm-s-obsidian {
-  font-family: var(--font-text);
+  font-family: var(--xuan-font-text);
   line-height: var(--line-height-normal);
 }
 
@@ -30,7 +30,7 @@
    ─────────────────────────────────────── */
 .markdown-preview-view,
 .markdown-rendered {
-  font-family: var(--font-text);
+  font-family: var(--xuan-font-text);
   line-height: var(--line-height-normal);
 }
 
@@ -48,7 +48,7 @@
 .markdown-rendered h3,
 .markdown-preview-view h3 {
   font-family: var(--xuan-font-serif);
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   font-weight: 500;
   color: var(--text-normal);
   line-height: var(--xuan-leading-head);
@@ -74,7 +74,7 @@
 
 .markdown-source-view.mod-cm6 .cm-header {
   font-family: var(--xuan-font-serif);
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   font-weight: 500;
   line-height: var(--xuan-leading-head);
 }

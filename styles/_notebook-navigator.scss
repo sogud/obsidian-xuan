@@ -1,0 +1,82 @@
+/* ========================================
+   Xuan Theme - Notebook Navigator Compatibility
+   只做插件隔离，不重画插件界面。
+======================================== */
+
+.view-content.notebook-navigator {
+  padding: 0;
+  border: none;
+}
+
+body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .view-content.notebook-navigator {
+  padding: 0;
+}
+
+.notebook-navigator {
+  font-family: var(--xuan-font-ui);
+
+  /* Notebook Navigator maps selected rows to Obsidian's --text-selection.
+     Xuan's selection is cinnabar, which is too loud for dense side panes. */
+  --text-selection: color-mix(in oklch, var(--text-normal) 8%, transparent);
+  --interactive-accent: var(--text-muted);
+  --interactive-accent-hover: var(--text-normal);
+  --nn-theme-file-selected-bg: var(--text-selection);
+  --nn-theme-file-selected-inactive-bg: var(--background-modifier-hover);
+  --nn-theme-navitem-selected-bg: var(--text-selection);
+  --nn-theme-navitem-selected-inactive-bg: var(--background-modifier-hover);
+  --nn-theme-calendar-day-today-bg: var(--text-selection);
+  --nn-theme-calendar-day-active-border-color: var(--text-muted);
+  --nn-theme-divider-resize-handle-hover-bg: var(--text-muted);
+  --nn-theme-header-button-hover-bg: var(--background-modifier-hover);
+  --nn-theme-header-button-active-bg: var(--background-modifier-active-hover);
+  --nn-theme-header-button-active-icon-color: var(--text-normal);
+  --nn-theme-mobile-toolbar-button-icon-color: var(--text-muted);
+  --nn-theme-mobile-toolbar-button-active-icon-color: var(--text-normal);
+  --nn-scroller-padding: 6px;
+  --nn-nav-item-padding-horizontal: 8px;
+  --nn-file-item-padding-horizontal: 10px;
+  --nn-file-padding-vertical: 6px;
+  --nn-date-header-padding-top: 18px;
+  --nn-date-header-padding-bottom: 4px;
+}
+
+/* Xuan has global button styles for Obsidian dialogs. Notebook Navigator
+   renders its own icon/calendar buttons and needs fixed dimensions. */
+.notebook-navigator button.nn-icon-button,
+.notebook-navigator .nn-header-actions button.nn-icon-button,
+.notebook-navigator button.nn-navigation-calendar-nav-button,
+.notebook-navigator button.nn-navigation-calendar-today,
+.notebook-navigator button.nn-navigation-calendar-period-button,
+.notebook-navigator button.nn-navigation-calendar-weeknumber-button,
+.notebook-navigator button.nn-navigation-calendar-year-month,
+.notebook-navigator .nn-search-clear-button,
+.notebook-navigator .nn-search-star-button,
+.notebook-navigator .nn-search-help-button,
+.notebook-navigator .nn-root-reorder-section-button,
+.notebook-navigator .nn-navitem-hover-action-button,
+.notebook-navigator .nn-mobile-toolbar-button {
+  min-height: unset !important;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notebook-navigator button.nn-icon-button:hover,
+.notebook-navigator .nn-header-actions button.nn-icon-button:hover,
+.notebook-navigator button.nn-navigation-calendar-nav-button:hover,
+.notebook-navigator button.nn-navigation-calendar-today:hover,
+.notebook-navigator button.nn-navigation-calendar-period-button:hover,
+.notebook-navigator button.nn-navigation-calendar-weeknumber-button:hover,
+.notebook-navigator button.nn-navigation-calendar-year-month:hover,
+.notebook-navigator .nn-search-clear-button:hover,
+.notebook-navigator .nn-search-star-button:hover,
+.notebook-navigator .nn-search-help-button:hover,
+.notebook-navigator .nn-root-reorder-section-button:hover,
+.notebook-navigator .nn-navitem-hover-action-button:hover,
+.notebook-navigator .nn-mobile-toolbar-button:hover {
+  background-color: var(--nn-theme-header-button-hover-bg) !important;
+}

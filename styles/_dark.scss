@@ -7,35 +7,41 @@
   /* ───────────────────────────────────────
      Semantic Tokens
      ─────────────────────────────────────── */
-  --xuan-paper-0: #242424;
-  --xuan-paper-1: #262626;
-  --xuan-desk-0: #2C2C2C;
-  --xuan-desk-1: #343434;
+  --xuan-paper-0: #242423;
+  --xuan-paper-1: #272625;
+  --xuan-desk-0: #2B2A28;
+  --xuan-desk-1: #32302D;
 
   --xuan-ink-0: #C9C6C1;
   --xuan-ink-1: #A7A39C;
   --xuan-ink-2: #7A7A7A;
 
   /* 印泥朱（夜间更暖、更明） */
-  --xuan-stamp-500: #D07B73;
-  --xuan-stamp-600: #E0A8A0; /* fallback for hover */
-  --xuan-stamp-wash: rgba(208, 123, 115, 0.22); /* fallback for tints */
+  --xuan-stamp-500: #C48A83;
+  --xuan-stamp-600: #D3A19A; /* fallback for hover */
+  --xuan-stamp-wash: rgba(196, 138, 131, 0.14); /* fallback for tints */
 
-  --xuan-divider: rgba(255, 255, 255, 0.08);
-  --xuan-guide: rgba(255, 255, 255, 0.05);
-  --xuan-paper-outline: rgba(255, 255, 255, 0.06);
+  --xuan-divider: rgba(255, 255, 255, 0.065);
+  --xuan-guide: rgba(255, 255, 255, 0.04);
+  --xuan-paper-outline: rgba(255, 255, 255, 0.05);
   --xuan-shadow-rgb: 0 0 0;
-  --xuan-texture-opacity: 0.012;
-  --xuan-focus-ring: rgb(208 123 115 / 0.22);
+  --xuan-texture-opacity: 0.008;
+  --xuan-focus-ring: rgb(196 138 131 / 0.16);
 
   /* Prefer perceptual mixing when supported. */
-  --xuan-stamp-600: color-mix(in oklch, var(--xuan-stamp-500) 78%, white);
-  --xuan-stamp-wash: color-mix(in oklch, var(--xuan-stamp-500) 22%, transparent);
+  --xuan-stamp-600: color-mix(in oklch, var(--xuan-stamp-500) 70%, white);
+  --xuan-stamp-wash: color-mix(in oklch, var(--xuan-stamp-500) 14%, transparent);
 
   /* Brand mapping */
   --xuan-accent: var(--xuan-stamp-500);
   --xuan-accent-hover: var(--xuan-stamp-600);
   --xuan-accent-light: var(--xuan-stamp-wash);
+  --accent-color: var(--xuan-accent);
+  --accent-color-hover: var(--xuan-accent-hover);
+  --accent-color-translucent: var(--xuan-accent-light);
+  --interactive-accent-rgb: var(--color-red-rgb);
+  --background-modifier-border-theme: var(--background-modifier-border);
+  --dropdown-background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23A7A39C' stroke-width='2' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='m7 10 5 5 5-5'/%3E%3C/svg%3E");
 
   /* ───────────────────────────────────────
      Background
@@ -44,25 +50,37 @@
   --background-secondary: var(--xuan-desk-0);
   --background-primary-alt: var(--xuan-desk-0);
   --background-secondary-alt: var(--xuan-desk-1);
+  --color-base-00: #1E1D1B;
+  --color-base-05: var(--xuan-paper-0);
+  --color-base-10: var(--xuan-paper-1);
+  --color-base-20: var(--xuan-desk-0);
+  --color-base-25: var(--xuan-desk-1);
+  --color-base-30: var(--background-modifier-border);
+  --color-base-35: var(--background-modifier-border-hover);
+  --color-base-40: var(--background-modifier-border-focus);
+  --color-base-50: var(--text-faint);
+  --color-base-60: var(--text-muted);
+  --color-base-70: var(--text-normal);
+  --color-base-100: #E6E1DA;
   
   /* ───────────────────────────────────────
      Background Modifiers
      ─────────────────────────────────────── */
-  --background-modifier-border: #3D3D3D;
-  --background-modifier-border-hover: #4D4D4D;
-  --background-modifier-border-focus: #5D5D5D;
-  --background-modifier-hover: rgba(80, 80, 80, 0.35);
-  --background-modifier-active-hover: rgba(95, 95, 95, 0.45);
+  --background-modifier-border: #3A3936;
+  --background-modifier-border-hover: #46443F;
+  --background-modifier-border-focus: #54514B;
+  --background-modifier-hover: rgba(92, 88, 80, 0.24);
+  --background-modifier-active-hover: rgba(112, 106, 96, 0.30);
   --background-modifier-error: #3D2323;
   --background-modifier-success: #1B3321;
-  --background-modifier-form-field: #2A2A2A;
-  --background-modifier-form-field: color-mix(in oklch, var(--xuan-paper-0) 75%, black);
+  --background-modifier-form-field: #292826;
+  --background-modifier-form-field: color-mix(in oklch, var(--xuan-paper-0) 82%, black);
   
   /* ───────────────────────────────────────
-     Xuan Surfaces（半透明）
+     Xuan Surfaces
      ─────────────────────────────────────── */
-  --xuan-surface-0: rgba(44, 44, 44, 0.72);
-  --xuan-surface-1: rgba(44, 44, 44, 0.88);
+  --xuan-surface-0: #2B2A28;
+  --xuan-surface-1: #32302D;
   /* --xuan-divider is defined in semantic tokens above */
   
   /* ───────────────────────────────────────
@@ -74,28 +92,35 @@
   --text-on-accent: #FFFFFF;
   --text-error: var(--xuan-accent);
   --text-success: #8FBC8F;
-  --text-selection: rgb(208 123 115 / 0.24);
-  --text-selection: color-mix(in oklch, var(--xuan-stamp-500) 22%, transparent);
+  --text-selection: rgb(196 138 131 / 0.14);
+  --text-selection: color-mix(in oklch, var(--xuan-stamp-500) 14%, transparent);
   
   /* ───────────────────────────────────────
      Interactive
      ─────────────────────────────────────── */
   --interactive-accent: var(--xuan-accent);
   --interactive-accent-hover: var(--xuan-accent-hover);
-  --interactive-normal: #3D3D3D;
-  --interactive-hover: #4D4D4D;
-  --interactive-active: #5D5D5D;
+  --interactive-normal: #34322F;
+  --interactive-hover: #3D3A36;
+  --interactive-active: #49453F;
+  --xuan-switch-track: #34322F;
+  --xuan-switch-track-hover: #3D3A36;
+  --xuan-switch-track-enabled: #4A403B;
+  --xuan-switch-border: #46443F;
+  --xuan-switch-border-enabled: #62514B;
+  --xuan-switch-thumb: #CFC8BE;
+  --xuan-switch-thumb-enabled: #F4EEE7;
   
   /* ───────────────────────────────────────
      Divider
      ─────────────────────────────────────── */
-  --divider-color: #3D3D3D;
+  --divider-color: #3A3936;
   --divider-width-hover: 1px;
   
   /* ───────────────────────────────────────
      Code
      ─────────────────────────────────────── */
-  --code-background: #2C2C2C;
+  --code-background: #2B2A28;
   --code-normal: #C9C6C1;
   --code-comment: var(--text-faint);
   --code-function: var(--xuan-accent);
@@ -111,14 +136,14 @@
      Blockquote
      ─────────────────────────────────────── */
   --blockquote-border-color: var(--xuan-accent);
-  --blockquote-background-color: #252525;
+  --blockquote-background-color: #282725;
   --blockquote-background-color: color-mix(in oklch, var(--xuan-paper-0) 75%, var(--xuan-desk-0));
   
   /* ───────────────────────────────────────
      Tag
      ─────────────────────────────────────── */
-  --tag-background: #343434;
-  --tag-background: color-mix(in oklch, var(--xuan-stamp-500) 10%, var(--xuan-desk-0));
+  --tag-background: #32302D;
+  --tag-background: color-mix(in oklch, var(--xuan-stamp-500) 6%, var(--xuan-desk-0));
   --tag-color: var(--text-normal);
   --tag-color-hover: var(--xuan-accent);
   --tag-border-color: transparent;
@@ -137,32 +162,32 @@
      Scrollbar
      ─────────────────────────────────────── */
   --scrollbar-bg: transparent;
-  --scrollbar-thumb-bg: #444444;
-  --scrollbar-thumb-hover-bg: #555555;
+  --scrollbar-thumb-bg: #3C3A36;
+  --scrollbar-thumb-hover-bg: #4A4741;
   
   /* ───────────────────────────────────────
      Canvas
      ─────────────────────────────────────── */
-  --canvas-background: #242424;
-  --canvas-card-background: #2C2C2C;
-  --canvas-card-border: #3D3D3D;
-  --canvas-dot-pattern: #3D3D3D;
+  --canvas-background: #242423;
+  --canvas-card-background: #2B2A28;
+  --canvas-card-border: #3A3936;
+  --canvas-dot-pattern: #3A3936;
   
   /* ───────────────────────────────────────
      PDF
      ─────────────────────────────────────── */
-  --pdf-background: #2C2C2C;
+  --pdf-background: #2B2A28;
   --pdf-text: var(--text-normal);
   
   /* ───────────────────────────────────────
      Color Palette (for plugins)
      ─────────────────────────────────────── */
-  --color-red-rgb: 208, 123, 115;
-  --color-orange-rgb: 200, 135, 95;
-  --color-yellow-rgb: 185, 170, 90;
-  --color-green-rgb: 100, 160, 105;
-  --color-cyan-rgb: 90, 160, 155;
-  --color-blue-rgb: 100, 140, 200;
-  --color-purple-rgb: 145, 120, 180;
-  --color-pink-rgb: 195, 110, 145;
+  --color-red-rgb: 196, 138, 131;
+  --color-orange-rgb: 190, 145, 108;
+  --color-yellow-rgb: 176, 164, 100;
+  --color-green-rgb: 112, 154, 112;
+  --color-cyan-rgb: 100, 152, 148;
+  --color-blue-rgb: 112, 138, 184;
+  --color-purple-rgb: 142, 126, 170;
+  --color-pink-rgb: 184, 122, 150;
 }

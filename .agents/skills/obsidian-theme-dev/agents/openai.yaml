@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian Theme Dev"
+  short_description: "Build Obsidian themes from official CSS variables"
+  default_prompt: "Use $obsidian-theme-dev to review this Obsidian theme change against official CSS variables and verified DOM selectors."
