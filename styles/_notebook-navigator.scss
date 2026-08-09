@@ -80,3 +80,13 @@ body:not(.is-mobile) .mod-sidedock .workspace-leaf-content > .view-content.noteb
 .notebook-navigator .nn-mobile-toolbar-button:hover {
   background-color: var(--nn-theme-header-button-hover-bg) !important;
 }
+
+/* Obsidian's empty tab actions inherit Xuan's red link/accent token. In an
+   empty editor pane this reads like an error state, so keep it quieter. */
+.empty-state-action {
+  color: var(--text-muted);
+}
+
+.empty-state-action:hover {
+  color: var(--text-normal);
+}
