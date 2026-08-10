@@ -42,8 +42,9 @@ Recommended: Source Han Serif (思源宋体), LXGW WenKai (霞鹜文楷), JetBra
 
 ```bash
 npm install
-npm run build     # styles/*.scss -> theme.css
-npm test          # run the test suite
+npm run build         # styles/*.scss -> theme.css
+npm run dev           # watch mode with source map
+npm run test:switch   # light/dark switch regression
 ```
 
 ## License
