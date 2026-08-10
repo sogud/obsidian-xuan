@@ -1,38 +1,51 @@
-# Xuan 宣纸
+# Xuan
 
-> 宣纸质感，宋韵留白。
+> Paper and ink, Song-dynasty inspired. A quiet Obsidian theme built on
+> blank space, ink wash, and a single touch of cinnabar.
 
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## 素
+[English](README.md) | [中文](README_zh.md)
 
-- **留白** — 以纸为底，择墨而书
-- **淡墨** — 浓淡之间，恰如其分
-- **点朱** — 一抹印泥，醒神不争
-- **无声** — 极简九成，留白九成
+## Quick start
 
-## 缘
+- **Use as-is**: copy `theme.css` into your Obsidian themes folder
+  (`<vault>/.obsidian/themes/Xuan/theme.css`), then enable **Xuan** under
+  *Settings → Appearance*.
+- **Build from source**: clone, `npm install`, `npm run build`. Edit
+  `styles/*.scss` and rebuild to regenerate `theme.css`.
 
-始于宋韵，极简为骨。
-纸为载体，墨做文章。
-不争不抢，自有章法。
+## Design principles
 
-## 色
+- **Blank space** — paper as canvas, ink as words
+- **Ink wash** — balanced between dark and light
+- **Cinnabar** — one touch of red, never competing
+- **Quiet** — minimal by default, whitespace everywhere
 
-|   | 浅   | 深   |
-|:--|:-----|:-----|
-| 纸 | #F9F7F4 | #242424 |
-| 墨 | #3C3C3C | #C9C6C1 |
-| 灰 | #F2EFE9 | #2C2C2C |
-| 朱 | #B13E36 | #D07B73 |
+## Colors
 
-## 字体
+|       | Light   | Dark    |
+|:------|:--------|:--------|
+| Paper | #F9F7F4 | #242424 |
+| Ink   | #3C3C3C | #C9C6C1 |
+| Gray  | #F2EFE9 | #2C2C2C |
+| Red   | #B13E36 | #D07B73 |
 
-推荐：思源宋体、霞鹜文楷、思源黑体、JetBrains Mono 等。
+## Fonts
 
-## 安装 / 构建
+The theme does not hardcode fonts; body and headings follow
+*Settings → Appearance → Font* in Obsidian. To fix fonts in source, edit
+`--xuan-font-sans` / `--xuan-font-serif` in `styles/_root.scss` and rebuild.
+Recommended: Source Han Serif (思源宋体), LXGW WenKai (霞鹜文楷), JetBrains Mono.
 
-- **直接用**：复制仓库中的 `theme.css` 到 Obsidian 主题目录，在「设置 → 外观」里启用 Xuan。
-- **本地改样式**：克隆后执行 `npm install` 与 `npm run build`，修改 `styles/*.scss` 后重新 build 得到 `theme.css`。
----
+## Development
 
-[https://github.com/sogud/obsidian-xuan](https://github.com/sogud/obsidian-xuan) · MIT
+```bash
+npm install
+npm run build     # styles/*.scss -> theme.css
+npm test          # run the test suite
+```
+
+## License
+
+[MIT](LICENSE)
