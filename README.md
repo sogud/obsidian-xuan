@@ -44,7 +44,8 @@ Recommended: Source Han Serif (思源宋体), LXGW WenKai (霞鹜文楷), JetBra
 npm install
 npm run build         # styles/*.scss -> theme.css
 npm run dev           # watch mode with source map
-npm run test:switch   # light/dark switch regression
+npm run test:switch   # light/dark switch regression (needs a Playwright CLI
+                      # wrapper: PWCLI=/path/to/playwright_cli.sh)
 ```
 
 ## License
