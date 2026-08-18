@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Xuan is a calm, ink-and-paper themed UI kit for Obsidian, Zed, and VS Code."
+  />
+  <title>Xuan Theme · 宣纸主题</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite">已复制到剪贴板</div>
+
+  <main class="page">
+    <header class="hero">
+      <div class="top-bar">
+        <p class="label">Xuan Theme</p>
+        <div class="lang-switch" role="tablist" aria-label="Language">
+          <button class="btn btn-small active" role="tab" data-locale="zh">中文</button>
+          <button class="btn btn-small" role="tab" data-locale="en">EN</button>
+        </div>
+      </div>
+
+      <h1 data-zh="Xuan · 宣纸 · 统一色系主题" data-en="Xuan · Ink Paper Theme">Xuan · 宣纸 · 统一色系主题</h1>
+      <p class="subtitle" data-zh="同一套主色体系，同步覆盖 Obsidian、Zed、VS Code。安静、留白、可长期使用。" data-en="One shared palette for Obsidian, Zed, and VS Code. Calm, airy, and built for long sessions.">
+        同一套主色体系，同步覆盖 Obsidian、Zed、VS Code。安静、留白、可长期使用。
+      </p>
+
+      <div class="action-row">
+        <a class="btn btn-primary" href="#obsidian" data-zh="Obsidian 下载" data-en="Obsidian">Obsidian 下载</a>
+        <a class="btn" href="#zed" data-zh="Zed 下载" data-en="Zed">Zed 下载</a>
+        <a class="btn" href="#vscode" data-zh="VS Code 下载" data-en="VS Code">VS Code 下载</a>
+        <a class="btn" href="https://github.com/sogud/obsidian-xuan" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <section class="locale locale-zh active">
+      <div class="cards">
+        <article id="obsidian">
+          <h2>Obsidian</h2>
+          <p data-zh="主入口（Obsidian 唯一入口）" data-en="Canonical entry (Obsidian only)">主入口（Obsidian 唯一入口）</p>
+          <ul>
+            <li>主题文件：<a href="../obsidian/theme.css">obsidian/theme.css</a></li>
+            <li>清单文件：<a href="../obsidian/manifest.json">obsidian/manifest.json</a></li>
+            <li>安装步骤：
+              <code>cp /你的仓库路径/xuan-theme/obsidian/theme.css ~/.obsidian/themes/Xuan/theme.css</code>
+            </li>
+            <li>
+              file:// 示例：
+              <code>file:///你的仓库路径/xuan-theme/obsidian/theme.css</code>
+            </li>
+          </ul>
+          <p class="locale-meta" data-zh="说明：将“/你的仓库路径/”替换成你本机实际仓库绝对路径。" data-en="Replace /your-repo-path/ with your local absolute repo path."></p>
+          <div class="copy-row">
+            <button class="btn copy-btn" data-copy="cp /你的仓库路径/xuan-theme/obsidian/theme.css ~/.obsidian/themes/Xuan/theme.css" data-zh="复制 Obsidian 安装命令" data-en="Copy Obsidian install command">复制 Obsidian 安装命令</button>
+          </div>
+        </article>
+
+        <article id="zed">
+          <h2>Zed</h2>
+          <p data-zh="配色导出（浅色/深色）" data-en="Color export (light/dark)">配色导出（浅色/深色）</p>
+          <ul>
+            <li>Xuan Light：<a href="../zed/xuan-light.json">zed/xuan-light.json</a></li>
+            <li>Xuan Dark：<a href="../zed/xuan-dark.json">zed/xuan-dark.json</a></li>
+            <li data-zh="导入：Zed 主题设置 → Import Theme" data-en="Import: Zed Theme setting → Import Theme">导入：Zed 主题设置 → Import Theme</li>
+          </ul>
+          <div class="copy-row">
+            <button class="btn copy-btn" data-copy="cp /你的仓库路径/xuan-theme/zed/xuan-light.json ~/Library/Application\ Support/Zed/themes/xuan-light.json" data-zh="复制 Zed Light 配置" data-en="Copy Zed Light">复制 Zed Light 配置</button>
+            <button class="btn copy-btn" data-copy="cp /你的仓库路径/xuan-theme/zed/xuan-dark.json ~/Library/Application\ Support/Zed/themes/xuan-dark.json" data-zh="复制 Zed Dark 配置" data-en="Copy Zed Dark">复制 Zed Dark 配置</button>
+          </div>
+        </article>
+
+        <article id="vscode">
+          <h2>VS Code</h2>
+          <p data-zh="配色导出（主题包）" data-en="Theme pack export">配色导出（主题包）</p>
+          <ul>
+            <li>入口：<a href="../vscode/package.json">vscode/package.json</a></li>
+            <li data-zh="主题文件：" data-en="Theme files: "><span data-zh="主题文件：" data-en="Theme files:"></span><a href="../vscode/xuan-light.json">vscode/xuan-light.json</a>、<a href="../vscode/xuan-dark.json">vscode/xuan-dark.json</a></li>
+            <li data-zh="本地安装：" data-en="Local install: "><span data-zh="本地安装：" data-en="Local install:"></span><code>cd vscode && code --install-extension .</code></li>
+            <li data-zh="打包：" data-en="Package:"><span data-zh="打包：" data-en="Package:"></span><code>cd vscode && npm run package</code></li>
+          </ul>
+          <div class="copy-row">
+            <button class="btn copy-btn" data-copy="cd /你的仓库路径/xuan-theme/vscode && code --install-extension ." data-zh="复制 VS Code 本地安装命令" data-en="Copy VS Code local install command">复制 VS Code 本地安装命令</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="locale locale-en">
+      <div class="cards">
+        <article>
+          <h2>Obsidian</h2>
+          <p>Canonical entry (Obsidian only)</p>
+          <ul>
+            <li>Theme file: <a href="../obsidian/theme.css">obsidian/theme.css</a></li>
+            <li>Manifest: <a href="../obsidian/manifest.json">obsidian/manifest.json</a></li>
+            <li>Install command:
+              <code>cp /your-repo-path/xuan-theme/obsidian/theme.css ~/.obsidian/themes/Xuan/theme.css</code>
+            </li>
+            <li>
+              file:// example:
+              <code>file:///your-repo-path/xuan-theme/obsidian/theme.css</code>
+            </li>
+          </ul>
+          <p class="locale-meta" data-zh="说明：将“/你的仓库路径/”替换成你本机实际仓库绝对路径。" data-en="Replace /your-repo-path/ with your local absolute repo path."></p>
+          <div class="copy-row">
+            <button class="btn copy-btn" data-copy="cp /your-repo-path/xuan-theme/obsidian/theme.css ~/.obsidian/themes/Xuan/theme.css" data-zh="复制 Obsidian 安装命令" data-en="Copy Obsidian install command">Copy Obsidian install command</button>
+          </div>
+        </article>
+
+        <article>
+          <h2>Zed</h2>
+          <p>Color export (light/dark)</p>
+          <ul>
+            <li>Xuan Light: <a href="../zed/xuan-light.json">zed/xuan-light.json</a></li>
+            <li>Xuan Dark: <a href="../zed/xuan-dark.json">zed/xuan-dark.json</a></li>
+            <li>Import: Zed Theme setting → Import Theme</li>
+          </ul>
+          <div class="copy-row">
+            <button class="btn copy-btn" data-copy="cp /your-repo-path/xuan-theme/zed/xuan-light.json ~/Library/Application\ Support/Zed/themes/xuan-light.json" data-zh="复制 Zed Light 配置" data-en="Copy Zed Light">Copy Zed Light</button>
+            <button class="btn copy-btn" data-copy="cp /your-repo-path/xuan-theme/zed/xuan-dark.json ~/Library/Application\ Support/Zed/themes/xuan-dark.json" data-zh="复制 Zed Dark 配置" data-en="Copy Zed Dark">Copy Zed Dark</button>
+          </div>
+        </article>
+
+        <article>
+          <h2>VS Code</h2>
+          <p>Theme pack export</p>
+          <ul>
+            <li>Entry: <a href="../vscode/package.json">vscode/package.json</a> (Xuan Light / Xuan Dark)</li>
+            <li>Theme files: <a href="../vscode/xuan-light.json">vscode/xuan-light.json</a>, <a href="../vscode/xuan-dark.json">vscode/xuan-dark.json</a></li>
+            <li>Local install: <code>cd vscode && code --install-extension .</code></li>
+            <li>Package: <code>cd vscode && npm run package</code></li>
+          </ul>
+          <div class="copy-row">
+            <button class="btn copy-btn" data-copy="cd /your-repo-path/xuan-theme/vscode && code --install-extension ." data-zh="复制 VS Code 本地安装命令" data-en="Copy VS Code local install command">Copy VS Code local install command</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="palette">
+      <h2 data-zh="主题预览" data-en="Theme Preview">主题预览</h2>
+      <div class="swatch-row">
+        <div class="swatch">
+          <span data-zh="墨色" data-en="Ink">墨色</span>
+          <strong>#262A2E</strong>
+        </div>
+        <div class="swatch soft">
+          <span data-zh="纸白" data-en="Paper">纸白</span>
+          <strong>#F5F4F0</strong>
+        </div>
+        <div class="swatch">
+          <span data-zh="焦点" data-en="Accent">焦点</span>
+          <strong>#365F8C</strong>
+        </div>
+        <div class="swatch soft">
+          <span data-zh="朱砂" data-en="Cinnabar">朱砂</span>
+          <strong>#C3414E</strong>
+        </div>
+      </div>
+
+      <div class="contrast">
+        <div class="card light">
+          <h3 data-zh="浅色" data-en="Light">浅色</h3>
+          <div class="line"><span data-zh="标题" data-en="Title">标题</span> · <span data-zh="纸底留白，字体清晰。" data-en="Paper-first canvas, clear readability.">纸底留白，字体清晰。</span></div>
+          <div class="line muted"><span data-zh="正文" data-en="Body">正文</span> · <span data-zh="低对比层次，适合长文笔记。" data-en="Low-contrast hierarchy, good for long notes.">低对比层次，适合长文笔记。</span></div>
+        </div>
+        <div class="card dark">
+          <h3 data-zh="深色" data-en="Dark">深色</h3>
+          <div class="line"><span data-zh="标题" data-en="Title">标题</span> · <span data-zh="暗色保留同一套呼吸与节奏。" data-en="Dark mode keeps the same rhythm and spacing.">暗色保留同一套呼吸与节奏。</span></div>
+          <div class="line muted"><span data-zh="正文" data-en="Body">正文</span> · <span data-zh="适配夜间长时间编码。" data-en="Tuned for long late-night coding sessions.">适配夜间长时间编码。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="links">
+      <h2 data-zh="下载 / 更新" data-en="Downloads / Updates">下载 / 更新</h2>
+      <a class="btn btn-primary" href="https://github.com/sogud/obsidian-xuan/releases" target="_blank" rel="noreferrer" data-zh="Releases" data-en="Releases">Releases</a>
+      <a class="btn" href="https://github.com/sogud/obsidian-xuan" target="_blank" rel="noreferrer" data-zh="仓库" data-en="Repository">仓库</a>
+      <a class="btn" href="https://github.com/sogud/obsidian-xuan/tree/main/docs" target="_blank" rel="noreferrer" data-zh="查看官网源码" data-en="View site source">查看官网源码</a>
+    </section>
+
+    <footer>Version: xuan-theme · Source of truth: theme-tokens.json</footer>
+  </main>
+
+  <script>
+    (function () {
+      const localeButtons = Array.from(document.querySelectorAll('[data-locale]'));
+      const localeSections = {
+        zh: document.querySelector('.locale-zh'),
+        en: document.querySelector('.locale-en'),
+      };
+      const toast = document.getElementById('toast');
+
+      function setLocaleText(locale) {
+        document.querySelectorAll('[data-zh][data-en]').forEach((el) => {
+          el.textContent = locale === 'zh' ? el.dataset.zh : el.dataset.en;
+        });
+        document.querySelectorAll('.locale-meta').forEach((el) => {
+          el.textContent = locale === 'zh' ? el.dataset.zh : el.dataset.en;
+        });
+      }
+
+      function switchLocale(locale) {
+        document.documentElement.lang = locale === 'zh' ? 'zh-CN' : 'en';
+        localeButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.locale === locale));
+        localeSections.zh.classList.toggle('active', locale === 'zh');
+        localeSections.en.classList.toggle('active', locale === 'en');
+        setLocaleText(locale);
+      }
+
+      localeButtons.forEach((btn) => {
+        btn.addEventListener('click', () => switchLocale(btn.dataset.locale));
+      });
+
+      document.querySelectorAll('.copy-btn').forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(btn.dataset.copy);
+            toast.textContent = '已复制到剪贴板';
+          } catch (error) {
+            window.prompt('复制失败，请手动复制：', btn.dataset.copy);
+            return;
+          }
+          toast.classList.add('show');
+          window.clearTimeout(window.__xuanCopyTimer);
+          window.__xuanCopyTimer = window.setTimeout(() => toast.classList.remove('show'), 1200);
+        });
+      });
+
+      switchLocale('zh');
+    })();
+  </script>
+</body>
+</html>

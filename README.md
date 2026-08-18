@@ -7,13 +7,34 @@
 
 [English](README.md) | [中文](README_zh.md)
 
+## Repository layout
+
+- **Obsidian dev/build source:** root `styles/*.scss`, `scripts/*`, `tests/*`
+- **Obsidian shipping entry:** `obsidian/theme.css`, `obsidian/manifest.json`
+- **Website:** `docs/index.html`, `docs/styles.css`
+- **Zed themes:** `zed/xuan-light.json`, `zed/xuan-dark.json`
+- **VS Code themes:** `vscode/package.json`, `vscode/xuan-light.json`,
+  `vscode/xuan-dark.json`
+
+`obsidian/theme.css` and `obsidian/manifest.json` are canonical for Obsidian publishing.  
+`zed/*` and `vscode/*` are synchronized brand exports, not Obsidian entry points.
+
 ## Quick start
 
-- **Use as-is**: copy `theme.css` into your Obsidian themes folder
+- **Obsidian (single source of truth)**:
+  copy `obsidian/theme.css` into your Obsidian theme folder
   (`<vault>/.obsidian/themes/Xuan/theme.css`), then enable **Xuan** under
   *Settings → Appearance*.
-- **Build from source**: clone, `npm install`, `npm run build`. Edit
-  `styles/*.scss` and rebuild to regenerate `theme.css`.
+- **Zed**:
+  import `zed/xuan-light.json` or `zed/xuan-dark.json` from Zed theme settings.
+- **VS Code**:
+  open a terminal at repo root and run:
+  `cd vscode && code --install-extension .`  
+  (local install from source, no build step needed)
+- **Build from source (Obsidian CSS)**: clone, `npm install`, `npm run build`.
+  Edit `styles/*.scss` and rebuild to regenerate `theme.css`.
+
+- **Website**: open `docs/index.html` locally, or publish via GitHub Pages with the `/docs` folder.
 
 ## Design principles
 
@@ -47,6 +68,13 @@ npm run dev           # watch mode with source map
 npm run test:switch   # light/dark switch regression (needs a Playwright CLI
                       # wrapper: PWCLI=/path/to/playwright_cli.sh)
 ```
+
+## VS Code extension
+
+- `npm` install in `vscode/` directory first if you want to package:
+  `cd vscode && npm install`.
+- Package to VSIX with the `vsce` tool if installed:
+  `npx @vscode/vsce package`.
 
 ## License
 

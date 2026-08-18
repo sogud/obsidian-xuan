@@ -1,0 +1,30 @@
+{
+  "name": "xuan-theme",
+  "displayName": "Xuan Theme",
+  "description": "Xuan theme pack for Visual Studio Code.",
+  "version": "0.1.0",
+  "publisher": "changshun",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "scripts": {
+    "package": "npx @vscode/vsce package"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Xuan Light",
+        "uiTheme": "vs",
+        "path": "./xuan-light.json"
+      },
+      {
+        "label": "Xuan Dark",
+        "uiTheme": "vs-dark",
+        "path": "./xuan-dark.json"
+      }
+    ]
+  }
+}

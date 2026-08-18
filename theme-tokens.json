@@ -1,0 +1,36 @@
+{
+  "brand": "xuan",
+  "theme": {
+    "name": "Xuan",
+    "type": "light"
+  },
+  "palette": {
+    "bg": "#f5f4f0",
+    "bg-soft": "#f4f2ec",
+    "bg-panel": "#f4f2ec",
+    "bg-muted": "#ece7dd",
+    "text": "#262a2e",
+    "text-muted": "#4e555d",
+    "text-subtle": "#7e838a",
+    "accent": "#365f8c",
+    "accent-soft": "#4474a7",
+    "keyword": "#7e2fba",
+    "string": "#3f8a17",
+    "number": "#a86a12",
+    "type": "#a86a12",
+    "function": "#1f6eb8",
+    "title": "#c3414e",
+    "property": "#c3414e",
+    "variable": "#c3414e",
+    "success": "#56733e",
+    "warning": "#86601f",
+    "danger": "#964444",
+    "selection": "#365f8c3d",
+    "link": "#1f6eb8",
+    "border": "#cfc9c0",
+    "muted-red": "#9d4f4f",
+    "muted-cyan": "#218791",
+    "muted-rose": "#754a88",
+    "line-number": "#8a8f96"
+  }
+}
