@@ -12,16 +12,16 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sogud/obsidian-xuan.git"
+    "url": "git+https://github.com/sogud/xuan-theme.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/sogud/obsidian-xuan/issues"
+    "url": "https://github.com/sogud/xuan-theme/issues"
   },
-  "homepage": "https://github.com/sogud/obsidian-xuan#readme",
+  "homepage": "https://github.com/sogud/xuan-theme#readme",
   "devDependencies": {
     "chokidar": "^5.0.0",
     "sass": "^1.98.0"
