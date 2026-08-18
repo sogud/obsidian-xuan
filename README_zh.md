@@ -53,3 +53,9 @@
 ## 许可
 
 [MIT](LICENSE)
+
+## 治理
+
+- [CONTRIBUTING](CONTRIBUTING.md)
+- [安全策略](SECURITY.md)
+- [行为准则](CODE_OF_CONDUCT.md)

@@ -79,3 +79,9 @@ npm run test:switch   # light/dark switch regression (needs a Playwright CLI
 ## License
 
 [MIT](LICENSE)
+
+## Governance
+
+- [Contributing](CONTRIBUTING.md)
+- [Security](SECURITY.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
