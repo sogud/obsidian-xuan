@@ -37,6 +37,28 @@
       </div>
     </header>
 
+    <section class="showcase" aria-label="Editor preview">
+      <div class="showcase-copy">
+        <p class="eyebrow" data-zh="主题现场" data-en="THEME IN USE">主题现场</p>
+        <h2 data-zh="像编辑器一样看主题" data-en="See the theme in its natural habitat">像编辑器一样看主题</h2>
+        <p data-zh="不是色卡拼贴，而是实际写作和编码时的背景、层级、语法与选中状态。" data-en="Not a moodboard. See the actual surfaces, hierarchy, syntax, and selection states.">不是色卡拼贴，而是实际写作和编码时的背景、层级、语法与选中状态。</p>
+      </div>
+      <div class="showcase-editor editor-dark">
+        <div class="editor-titlebar"><span class="traffic"><i></i><i></i><i></i></span><span>xuan-theme / theme.ts</span><span class="window-mode">XUAN DARK</span></div>
+        <div class="editor-body">
+          <div class="editor-line"><em>01</em><span class="token-comment">// 墨砚底色，给眼睛留一点余地</span></div>
+          <div class="editor-line"><em>02</em><span><span class="token-keyword">const</span> <span class="token-variable">theme</span> = {</span></div>
+          <div class="editor-line"><em>03</em><span>&nbsp;&nbsp;<span class="token-property">surface</span>: <span class="token-string">'#17191C'</span>,</span></div>
+          <div class="editor-line selected"><em>04</em><span>&nbsp;&nbsp;<span class="token-property">accent</span>: <span class="token-string">'#C8755D'</span>,</span></div>
+          <div class="editor-line"><em>05</em><span>&nbsp;&nbsp;<span class="token-property">link</span>: <span class="token-link">'#8FB9C0'</span>,</span></div>
+          <div class="editor-line"><em>06</em><span>&nbsp;&nbsp;<span class="token-property">text</span>: <span class="token-string">'#E4E0D8'</span>,</span></div>
+          <div class="editor-line"><em>07</em><span>};</span></div>
+          <div class="editor-line"><em>08</em><span>&nbsp;</span></div>
+          <div class="editor-line"><em>09</em><span class="token-comment">/* 宣纸 Light / 墨砚 Dark */</span></div>
+        </div>
+      </div>
+    </section>
+
     <section class="locale locale-zh active">
       <div class="cards">
         <article id="obsidian">
@@ -145,20 +167,36 @@
       <h2 data-zh="主题预览" data-en="Theme Preview">主题预览</h2>
       <div class="swatch-row">
         <div class="swatch">
-          <span data-zh="墨色" data-en="Ink">墨色</span>
-          <strong>#262A2E</strong>
+          <span data-zh="墨砚背景" data-en="Inkstone">墨砚背景</span>
+          <strong>#17191C</strong>
         </div>
         <div class="swatch soft">
-          <span data-zh="纸白" data-en="Paper">纸白</span>
-          <strong>#F5F4F0</strong>
+          <span data-zh="宣纸背景" data-en="Xuan Paper">宣纸背景</span>
+          <strong>#FAF8F5</strong>
         </div>
         <div class="swatch">
-          <span data-zh="焦点" data-en="Accent">焦点</span>
-          <strong>#365F8C</strong>
+          <span data-zh="朱砂强调" data-en="Cinnabar">朱砂强调</span>
+          <strong>#C8755D</strong>
         </div>
         <div class="swatch soft">
-          <span data-zh="朱砂" data-en="Cinnabar">朱砂</span>
-          <strong>#C3414E</strong>
+          <span data-zh="青瓷链接" data-en="Celadon Link">青瓷链接</span>
+          <strong>#8FB9C0</strong>
+        </div>
+        <div class="swatch dark-swatch">
+          <span data-zh="墨砚面板" data-en="Inkstone Panel">墨砚面板</span>
+          <strong>#22262B</strong>
+        </div>
+        <div class="swatch dark-swatch">
+          <span data-zh="暖白正文" data-en="Warm Text">暖白正文</span>
+          <strong>#E4E0D8</strong>
+        </div>
+        <div class="swatch dark-swatch">
+          <span data-zh="松烟注释" data-en="Pine-Smoke Comment">松烟注释</span>
+          <strong>#77756F</strong>
+        </div>
+        <div class="swatch dark-swatch">
+          <span data-zh="代码字符串" data-en="Code String">代码字符串</span>
+          <strong>#9FCA9C</strong>
         </div>
       </div>
 
@@ -172,6 +210,36 @@
           <h3 data-zh="深色" data-en="Dark">深色</h3>
           <div class="line"><span data-zh="标题" data-en="Title">标题</span> · <span data-zh="暗色保留同一套呼吸与节奏。" data-en="Dark mode keeps the same rhythm and spacing.">暗色保留同一套呼吸与节奏。</span></div>
           <div class="line muted"><span data-zh="正文" data-en="Body">正文</span> · <span data-zh="适配夜间长时间编码。" data-en="Tuned for long late-night coding sessions.">适配夜间长时间编码。</span></div>
+        </div>
+      </div>
+
+      <div class="editor-preview">
+        <div class="preview-heading">
+          <h3 data-zh="编辑器质感预览" data-en="Editor Surface Preview">编辑器质感预览</h3>
+          <span data-zh="模拟 Obsidian / Zed / VS Code" data-en="Obsidian / Zed / VS Code inspired">模拟 Obsidian / Zed / VS Code</span>
+        </div>
+        <div class="editor-grid">
+          <div class="editor-shell editor-light">
+            <div class="editor-titlebar"><span class="traffic"><i></i><i></i><i></i></span><span>Xuan Light · notes.md</span><span>○</span></div>
+            <div class="editor-body">
+              <div class="editor-line"><em>01</em><span class="token-heading"># 宣纸上的主题</span></div>
+              <div class="editor-line"><em>02</em><span class="token-comment">用留白承载长时间阅读。</span></div>
+              <div class="editor-line"><em>03</em><span>&nbsp;</span></div>
+              <div class="editor-line selected"><em>04</em><span>- <span class="token-link">[查看 Xuan Dark](theme.md)</span></span></div>
+              <div class="editor-line"><em>05</em><span><span class="token-keyword">const</span> <span class="token-variable">paper</span> = <span class="token-string">"warm and quiet"</span>;</span></div>
+            </div>
+          </div>
+          <div class="editor-shell editor-dark">
+            <div class="editor-titlebar"><span class="traffic"><i></i><i></i><i></i></span><span>Xuan Dark · theme.ts</span><span>●</span></div>
+            <div class="editor-body">
+              <div class="editor-line"><em>01</em><span class="token-comment">// 墨砚：安静，但不是纯黑</span></div>
+              <div class="editor-line"><em>02</em><span><span class="token-keyword">function</span> <span class="token-function">renderTheme</span>() {</span></div>
+              <div class="editor-line"><em>03</em><span>&nbsp;&nbsp;<span class="token-keyword">return</span> {</span></div>
+              <div class="editor-line selected"><em>04</em><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="token-property">accent</span>: <span class="token-string">'#C8755D'</span>,</span></div>
+              <div class="editor-line"><em>05</em><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="token-property">link</span>: <span class="token-string">'#8FB9C0'</span>,</span></div>
+              <div class="editor-line"><em>06</em><span>&nbsp;&nbsp;}</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

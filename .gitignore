@@ -3,3 +3,6 @@ node_modules/
 .DS_Store
 .playwright-cli/
 output/
+site/.astro/
+site/node_modules/
+site/dist/

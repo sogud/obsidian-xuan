@@ -1,0 +1,115 @@
+---
+import '../styles/global.css';
+
+const colors = [
+  ['墨砚', '#17191C', 'surface'],
+  ['墨砚面板', '#22262B', 'surface'],
+  ['暖白正文', '#E4E0D8', 'content'],
+  ['朱砂', '#C8755D', 'accent'],
+  ['青瓷蓝', '#8FB9C0', 'link'],
+  ['松烟注释', '#77756F', 'syntax'],
+  ['松柏字符串', '#9FCA9C', 'syntax'],
+  ['古紫关键字', '#B6A0C9', 'syntax'],
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Xuan Theme，统一覆盖 Obsidian、Zed、VS Code 与终端的宣纸 / 墨砚主题。" />
+    <title>Xuan Theme · 宣纸与墨砚</title>
+  </head>
+  <body>
+    <main class="shell">
+      <nav class="nav">
+        <a class="brand" href="/xuan-theme/" aria-label="Xuan Theme home"><span class="seal">宣</span><span>Xuan Theme</span></a>
+        <div class="nav-links"><a href="#palette">色彩</a><a href="#platforms">平台</a><a href="https://github.com/sogud/xuan-theme">GitHub ↗</a><button id="site-theme" type="button">墨砚 Dark</button><button id="lang">EN</button></div>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">宣纸 / 墨砚 · ONE PALETTE, MANY TOOLS</p>
+          <h1>让每一次<br /><i>书写与编码</i>都有余韵。</h1>
+          <p class="lede">Xuan 是一套从笔墨纸砚出发的跨终端主题。Light 保留宣纸的呼吸，Dark 沉入墨砚的安静。</p>
+          <div class="hero-actions"><a class="button primary" href="#platforms">开始使用</a><a class="button ghost" href="#palette">查看配色</a></div>
+        </div>
+        <div class="hero-mark" aria-hidden="true"><span>宣</span><small>XUAN</small></div>
+      </section>
+
+      <section class="editor-stage" id="preview">
+        <div class="stage-label"><span>01 / THEME IN USE</span><span><button class="mode-button active" data-mode="dark">墨砚 Dark</button><button class="mode-button" data-mode="light">宣纸 Light</button></span></div>
+        <div class="editor-window live-editor dark-mode">
+          <div class="window-bar"><span class="traffic"><b></b><b></b><b></b></span><span>xuan-theme / theme.ts</span><span class="mode">XUAN DARK</span></div>
+          <div class="window-main">
+            <aside class="file-tree"><span class="tree-title">EXPLORER</span><span>⌄ xuan-theme</span><span class="file active">◆ theme.ts</span><span class="file">◦ tokens.json</span><span class="file">◦ notes.md</span></aside>
+            <div class="code-area">
+              <div class="code-line"><em>01</em><span class="comment">// 墨砚底色，给眼睛留一点余地</span></div>
+              <div class="code-line"><em>02</em><span><strong>const</strong> <var>theme</var> = {</span></div>
+              <div class="code-line"><em>03</em><span>&nbsp;&nbsp;<label>surface</label>: <mark>'#17191C'</mark>,</span></div>
+              <div class="code-line selected"><em>04</em><span>&nbsp;&nbsp;<label>accent</label>: <mark>'#C8755D'</mark>,</span></div>
+              <div class="code-line"><em>05</em><span>&nbsp;&nbsp;<label>link</label>: <a>'#8FB9C0'</a>,</span></div>
+              <div class="code-line"><em>06</em><span>&nbsp;&nbsp;<label>text</label>: <mark>'#E4E0D8'</mark>,</span></div>
+              <div class="code-line"><em>07</em><span>};</span></div>
+              <div class="code-line"><em>08</em><span>&nbsp;</span></div>
+              <div class="code-line"><em>09</em><span class="comment">/* 宣纸 Light / 墨砚 Dark */</span></div>
+            </div>
+          </div>
+          <div class="window-status"><span>Ln 04, Col 18</span><span>UTF-8 · TypeScript</span><span>◉ Xuan Dark</span></div>
+        </div>
+        <div class="markdown-demo light-mode">
+          <div class="markdown-bar"><span class="app-brand"><b>宣</b> XUAN VAULT</span><span>⌕　⌘P　⚙</span></div>
+          <div class="markdown-tabs"><span>◈ 笔墨纸砚.md</span><span>＋</span></div>
+          <div class="markdown-app">
+            <aside class="markdown-sidebar"><span class="sidebar-label">FILE EXPLORER</span><span>⌄ Xuan Notes</span><span class="note-item active">◈ 笔墨纸砚.md</span><span class="note-item">◦ 配色系统.md</span><span class="note-item">◦ Reading List.md</span><span class="sidebar-label second">OUTLINE</span><span>在宣纸上留一点空白</span><span>设计原则</span></aside>
+            <article class="markdown-body">
+              <div class="note-meta"><span>LAST EDITED JUST NOW</span><span>⋮</span></div>
+              <p class="md-kicker">XUAN / NOTE</p>
+              <h2>在宣纸上留一点空白</h2>
+              <p>主题不是装饰，而是让内容更容易被看见。<a href="#palette">Xuan</a> 用克制的层级承载长期阅读。</p>
+              <blockquote><strong>笔墨纸砚</strong><br />好的界面，像纸张一样安静，像墨色一样有重量。</blockquote>
+              <h3>设计原则</h3>
+              <ul><li>背景退后，内容先被看见</li><li>强调色只在需要行动时出现</li><li><input type="checkbox" checked disabled /> Dark 模式也保持呼吸感</li></ul>
+              <pre><code>const paper = "warm and quiet";</code></pre>
+              <div class="md-tags"><span>#宣纸</span><span>#墨砚</span><span>#long-reading</span></div>
+            </article>
+          </div>
+          <div class="markdown-status"><span>☼ Reading view</span><span>笔墨纸砚.md　·　642 words</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="palette">
+        <div class="section-heading"><p class="kicker">02 / COLOR SYSTEM</p><h2>不是色卡，是一套<br /><i>可工作的关系。</i></h2><p>颜色按表面、内容、交互、语法四个层级组织。每个值都有位置，也都有克制。</p></div>
+        <div class="color-grid">{colors.map(([name, value, group]) => <div class={`color-card ${group}`}><span class="color-dot"></span><div><small>{group}</small><h3>{name}</h3><code>{value}</code></div></div>)}</div>
+      </section>
+
+      <section class="section platforms" id="platforms">
+        <div class="section-heading"><p class="kicker">03 / ONE BRAND, MANY SURFACES</p><h2>写作、编码、<br /><i>终端，都用 Xuan。</i></h2></div>
+        <div class="platform-grid"><a href="https://github.com/sogud/xuan-theme/tree/master/obsidian"><strong>Obsidian</strong><span>宣纸阅读体验 · Dark / Light ↗</span></a><a href="https://github.com/sogud/xuan-theme/tree/master/zed"><strong>Zed</strong><span>原生 JSON 主题 · Dark / Light ↗</span></a><a href="https://github.com/sogud/xuan-theme/tree/master/vscode"><strong>VS Code</strong><span>完整语法高亮 · Dark / Light ↗</span></a><a class="future"><strong>Terminal</strong><span>Ghostty · iTerm2 · Neovim / soon</span></a></div>
+      </section>
+
+      <footer><span>铺纸研墨，心自安。</span><span>MIT · Xuan Theme · 2026</span></footer>
+    </main>
+    <script>
+      const editor = document.querySelector('.live-editor');
+      const markdown = document.querySelector('.markdown-demo');
+      const siteTheme = document.querySelector('#site-theme');
+      siteTheme.addEventListener('click', () => {
+        const dark = document.body.classList.toggle('site-dark');
+        siteTheme.textContent = dark ? '宣纸 Light' : '墨砚 Dark';
+      });
+      document.querySelectorAll('.mode-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          const isLight = button.dataset.mode === 'light';
+          editor.classList.toggle('light-mode', isLight);
+          editor.classList.toggle('dark-mode', !isLight);
+          markdown.classList.toggle('light-mode', isLight);
+          markdown.classList.toggle('dark-mode', !isLight);
+          document.querySelectorAll('.mode-button').forEach((item) => item.classList.toggle('active', item === button));
+          editor.querySelector('.mode').textContent = isLight ? 'XUAN LIGHT' : 'XUAN DARK';
+        });
+      });
+    </script>
+  </body>
+</html>
